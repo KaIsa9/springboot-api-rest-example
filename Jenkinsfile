@@ -5,7 +5,11 @@ pipeline {
   stages {
     stage('Build'){
       steps{
-        echo 'Build'
+      echo 'Download dependencies'
+        withMaven(maven:"maven-386", publisherStrategy: 'EXPLICIT'){
+          sh "#!bin/bash -e\n\
+          mvn install -DskipTests"
+          }
         }
     }
     stage('Test'){
