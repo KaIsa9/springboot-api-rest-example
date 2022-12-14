@@ -7,7 +7,9 @@ pipeline {
       steps{
       echo 'Download dependencies'
         withMaven(maven:"maven-386", publisherStrategy: 'EXPLICIT'){
-          sh "mvn install -DskipTests"
+          sh "cd api \n\
+          mvn install -DskipTests\n\
+          cd .."
           }
         }
     }
