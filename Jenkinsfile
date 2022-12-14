@@ -1,27 +1,25 @@
 
 
 pipeline {
-  agent any
+  agent {
+      docker { image 'node:16-alpine' }
+  } 
   stages {
     stage('Build'){
       steps{
-      echo 'Download dependencies'
-        withMaven(maven:"maven-386", publisherStrategy: 'EXPLICIT'){
-          sh "cd api \n\
-          mvn install -DskipTests\n\
-          cd .."
-          }
+      sh 'node --version'
+          
         }
     }
-    stage('Test'){
-          steps{
-              echo 'Test'
-              }        
-    }
-    stage('Deploy'){
-        steps{
-            echo 'Deploy'
-            }
-          }        
+//     stage('Test'){
+//           steps{
+//               echo 'Test'
+//               }        
+//     }
+//     stage('Deploy'){
+//         steps{
+//             echo 'Deploy'
+//             }
+//           }        
     }
   }
