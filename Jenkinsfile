@@ -18,6 +18,7 @@ pipeline {
           steps{
               echo 'Test'
               sh "pwd\n\
+              cd api\n\
               mvn test"
               }        
     }
