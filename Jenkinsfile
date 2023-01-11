@@ -16,16 +16,34 @@ pipeline {
     }
     stage('Test'){
           steps{
-              echo 'Test'
-              sh "pwd\n\
-              cd api\n\
-              mvn test"
-              }        
+            script{
+                echo 'Test'
+                sh "pwd\n\
+                cd api\n\
+                mvn test"
+                }
+             }        
     }
-    stage('Deploy'){
+    stage('Static code analysis'){
         steps{
-            echo 'Deploy'
+        script{
+            echo 'Static code analysis'
+            sh "cd api\n\
+              echo \"static code analysis finished\"\n\
+              mvn -X clean checkstyle:checkstyle\n\
+              echo \"static code analysis finished\""
+            }
+            
+            echo "Reading static analysis report"
+            recordIssues enabledForFailure: true, failOnError: false, tool:checkStyle(pattern: "**/target/checkstyle-result.xml")
             }
           }        
     }
   }
+// def runStaticCodeAnalysis(){
+//   withMaven(maven: "maven-387", publisherStrategy: 'EXPLICIT'){
+//   sh "cd api\n\
+//   echo \"static code analysis finished\"\n\
+//   mvn -X clean checkstyle:checkstyle\n\
+//   echo \"static code analysis finished\""}
+// }
