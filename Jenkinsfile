@@ -17,6 +17,8 @@ pipeline {
     stage('Test'){
           steps{
               echo 'Test'
+              sh "pwd\n\
+              mvn test"
               }        
     }
     stage('Deploy'){
