@@ -7,8 +7,7 @@ pipeline {
       steps{
       echo 'Download dependencies'
         withMaven(maven:"maven-387", publisherStrategy: 'EXPLICIT'){
-          sh "#!bin/bash -e\n\
-          mvn install -DskipTests"
+          sh "mvn install -DskipTests"
           }
         }
     }
