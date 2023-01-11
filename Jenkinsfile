@@ -17,9 +17,9 @@ pipeline {
     stage('Test'){
           steps{
               echo 'Test'
-//               sh "pwd\n\
-//               cd api\n\
-//               mvn test"
+              sh "pwd\n\
+              cd api\n\
+              mvn test"
               }        
     }
     stage('Static code analysis'){
