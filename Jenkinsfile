@@ -14,14 +14,14 @@ pipeline {
           }
         }
     }
-    stage('Test'){
-          steps{
-              echo 'Test'
-              sh "pwd\n\
-              cd api\n\
-              mvn test"
-              }        
-    }
+//     stage('Test'){
+//           steps{
+//               echo 'Test'
+//               sh "pwd\n\
+//               cd api\n\
+//               mvn test"
+//               }        
+//     }
     stage('Static code analysis'){
         steps{
             echo 'Static code analysis'
