@@ -28,16 +28,19 @@ pipeline {
         steps{
         script{
             echo 'Static code analysis'
-            runStaticCodeAnalysis
+            sh "cd api\n\
+              echo \"static code analysis finished\"\n\
+              mvn -X clean checkstyle:checkstyle\n\
+              echo \"static code analysis finished\""
             }
             }
           }        
     }
   }
-def runStaticCodeAnalysis(){
-  withMaven(maven: "maven-387", publisherStrategy: 'EXPLICIT'){
-  sh "cd api\n\
-  echo \"static code analysis finished\"\n\
-  mvn -X clean checkstyle:checkstyle\n\
-  echo \"static code analysis finished\""}
-}
+// def runStaticCodeAnalysis(){
+//   withMaven(maven: "maven-387", publisherStrategy: 'EXPLICIT'){
+//   sh "cd api\n\
+//   echo \"static code analysis finished\"\n\
+//   mvn -X clean checkstyle:checkstyle\n\
+//   echo \"static code analysis finished\""}
+// }
