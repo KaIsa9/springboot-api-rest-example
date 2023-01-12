@@ -33,6 +33,9 @@ pipeline {
               mvn -X clean checkstyle:checkstyle\n\
               echo \"static code analysis finished\""
             }
+            
+            echo "Reading static analysis report"
+            recordIssues enabledForFailure: true, failOnError: false, tool:checkStyle(pattern: "**/target/checkstyle-result.xml")
             }
           }        
     }
