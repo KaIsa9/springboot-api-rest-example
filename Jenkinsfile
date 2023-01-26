@@ -8,6 +8,7 @@ pipeline {
       echo 'Download dependencies'
         withMaven(maven:"maven-387", publisherStrategy: 'EXPLICIT'){
           sh "pwd\n\
+          ls -la\n\
           cd api \n\
           ls -la\n\
           mvn install -DskipTests"
