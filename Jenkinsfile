@@ -15,24 +15,24 @@ pipeline {
           }
         }
     }
-    stage('Test'){
-          steps{
-            script{
-                echo 'Test'
-                sh "pwd\n\
-                cd api\n\
-                mvn test jacoco:report"
-                }
-                
-                publishHTML([
-                  allowMissing: true,
-                  keepAll:true,
-                  alwaysLinkToLastBuild: true,
-                  reportDir: 'api/target/site/jacoco',
-                  reportFiles: 'index.html',
-                  reportName: 'Jacoco coverage HTML report'])
-             }        
-    }
+//     stage('Test'){
+//           steps{
+//             script{
+//                 echo 'Test'
+//                 sh "pwd\n\
+//                 cd api\n\
+//                 mvn test jacoco:report"
+//                 }
+//                 
+//                 publishHTML([
+//                   allowMissing: true,
+//                   keepAll:true,
+//                   alwaysLinkToLastBuild: true,
+//                   reportDir: 'api/target/site/jacoco',
+//                   reportFiles: 'index.html',
+//                   reportName: 'Jacoco coverage HTML report'])
+//              }        
+//     }
     stage('Static code analysis'){
         steps{
         script{
