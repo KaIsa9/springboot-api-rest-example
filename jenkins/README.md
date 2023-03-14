@@ -1,8 +1,7 @@
-#Prerequisites.
+# Prerequisites.
 The Jenkins is installed and set up with ansible playbook from [project](https://github.com/Alliedium/awesome-jenkins/)
-[multibranchpipelines](https://www.jenkins.io/doc/book/pipeline/multibranch/)
 
-#Jenkinsfile description
+# Jenkinsfile description
 
 Here we created Jenkinsfile to run our staged build on Jenkins. [How to run pipeline](https://www.jenkins.io/doc/book/pipeline/running-pipelines/)
 We used declarative pipeline. 

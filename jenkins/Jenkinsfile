@@ -70,16 +70,16 @@ def getCheckstyleRules(String selectedCheckstyleRules) {
             mvnOptions = '-Dcodestyle.checks.file=./codestyle/sun_checks.xml'
             break
       case "sun_checks_with_suppressions":
-            mvnOptions = '-Dcodestyle.checks.file=./codestyle/sun_checks.xml -Dcodestyle.suppressions.file=./codestylecheckstyle-suppressions.xml'
+            mvnOptions = '-Dcodestyle.checks.file=./codestyle/sun_checks.xml -Dcodestyle.suppressions.file=./codestyle/checkstyle_suppressions.xml'
             break
       case "custom_checks":
             mvnOptions = '-Dcodestyle.checks.file=./codestyle/checkstyle_checks.xml'
             break
       case "custom_checks_with_suppressions":
-            mvnOptions = '-Dcodestyle.checks.file=./codestyle/checkstyle_checks.xml -Dcodestyle.suppressions.file=./codestylecheckstyle-suppressions.xml'
+            mvnOptions = '-Dcodestyle.checks.file=./codestyle/checkstyle_checks.xml -Dcodestyle.suppressions.file=./codestyle/checkstyle_suppressions.xml'
             break
       default:
-            mvnOptions = ' h lkjh lkjhjlkhjklhjklhlhkjkjkjkj ;kj jk;'
+            mvnOptions = '-Dcodestyle.checks.file=./codestyle/sun_checks.xml'
             break
       }  
       return mvnOptions
