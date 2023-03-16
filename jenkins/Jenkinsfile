@@ -12,7 +12,7 @@ pipeline {
           }
       steps{
       echo 'Download dependencies'
-        withMaven(maven:"maven-387", publisherStrategy: 'EXPLICIT'){
+        withMaven(maven:"maven", publisherStrategy: 'EXPLICIT'){
           sh "cd api \n\
           mvn install -P default"
           }
