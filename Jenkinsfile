@@ -6,13 +6,13 @@ pipeline {
     stage('Build'){
       steps{
       echo 'Download dependencies'
-        withMaven(maven:"maven-387", publisherStrategy: 'EXPLICIT'){
+//         withMaven(maven:"maven", publisherStrategy: 'EXPLICIT'){
           sh "pwd\n\
           ls -la\n\
           cd api \n\
           ls -la\n\
           mvn install -DskipTests"
-          }
+//           }
         }
     }
     stage('Test'){
