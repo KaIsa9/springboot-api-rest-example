@@ -14,7 +14,7 @@ pipeline {
       echo 'Download dependencies'
         withMaven(maven:"maven", publisherStrategy: 'EXPLICIT'){
           sh "cd api \n\
-          mvn install -P default"
+          mvn -X -ntp install -P default"
           }
         }
     }
