@@ -18,6 +18,8 @@
   <properties>
     <springdoc.version>1.6.11</springdoc.version>
     <java.version>17</java.version>
+    <codestyle.checks.file>./codestyle/checkstyle_checks.xml</codestyle.checks.file>
+    <codestyle.suppressions.file></codestyle.suppressions.file>
   </properties>
 
   <reporting>
